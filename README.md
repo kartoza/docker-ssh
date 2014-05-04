@@ -21,6 +21,8 @@ To log into your container do:
 ssh root@localhost -p 2222
 ```
 
+Default password is 'changeme'
+
 -----------
 
 Tim Sutton (tim@linfiniti.com)

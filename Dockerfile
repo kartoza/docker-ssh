@@ -34,5 +34,5 @@ RUN echo 'root:changeme' | chpasswd
 # Open port 22 so linked containers can see them
 EXPOSE 22
 
-CMD bash
+CMD supervisord -n
 

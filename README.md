@@ -12,7 +12,7 @@ docker build -t kartoza/ssh git://github.com/timlinux/docker-ssh
 To run a container do:
 
 ```
-docker run --name "ssh" -p 2222:22 -d -t git://github.com/timlinux/docker-ssh.git 
+docker run --name "ssh" -p 2222:22 -d -t kartoza/ssh
 ```
 
 To log into your container do:

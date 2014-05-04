@@ -3,9 +3,25 @@ docker-ssh
 
 A simple docker container that runs ssh
 
-
-To use do:
+To build the image do:
 
 ```
-docker run -d -t git://github.com/timlinux/docker-ssh.git 
+docker build -t kartoza/ssh git://github.com/timlinux/docker-ssh
 ```
+
+To run a container do:
+
+```
+docker run --name "ssh" -p 2222:22 -d -t git://github.com/timlinux/docker-ssh.git 
+```
+
+To log into your container do:
+
+```
+ssh root@localhost -p 2222
+```
+
+-----------
+
+Tim Sutton (tim@linfiniti.com)
+May 2014

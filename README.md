@@ -21,7 +21,11 @@ To log into your container do:
 ssh root@localhost -p 2222
 ```
 
-Default password is 'changeme'
+Default password will appear in docker logs:
+
+```
+docker logs <container name> | grep root login password
+```
 
 -----------
 

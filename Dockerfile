@@ -27,12 +27,18 @@ ADD sshd.conf /etc/supervisor/conf.d/sshd.conf
 RUN rpl "PermitRootLogin without-password" "PermitRootLogin yes" /etc/ssh/sshd_config
 RUN mkdir /root/.ssh
 RUN chmod o-rwx /root/.ssh
-RUN echo 'root:changeme' | chpasswd
 
 #-------------Application Specific Stuff ----------------------------------------------------
 
-# Open port 22 so linked containers can see them
-EXPOSE 22
+# Run any additional tasks here that are too tedious to put in
+# this dockerfile directly.
+ADD setup.sh /setup.sh
+RUN chmod 0755 /setup.sh
+RUN /setup.sh
 
-CMD supervisord -n
+# Called on first run of docker - will run supervisor
+ADD start.sh /start.sh
+RUN chmod 0755 /start.sh
+
+CMD /start.sh
 

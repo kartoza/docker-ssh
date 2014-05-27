@@ -1,1 +1,1 @@
-docker.io build -t kartoza/ssh:1.0 .
+docker.io build -t kartoza/ssh .

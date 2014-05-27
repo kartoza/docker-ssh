@@ -29,6 +29,8 @@ RUN mkdir /root/.ssh
 RUN chmod o-rwx /root/.ssh
 
 #-------------Application Specific Stuff ----------------------------------------------------
+# Open port 22 so linked containers can see it
+EXPOSE 22
 
 # Run any additional tasks here that are too tedious to put in
 # this dockerfile directly.

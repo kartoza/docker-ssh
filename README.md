@@ -24,7 +24,7 @@ ssh root@localhost -p 2222
 Default password will appear in docker logs:
 
 ```
-docker logs <container name> | grep root login password
+docker logs <container name> | grep 'root login password'
 ```
 
 -----------
